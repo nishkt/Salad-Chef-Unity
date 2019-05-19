@@ -1,25 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using CodeMonkey;
+using CodeMonkey.Utils;
 
 public class GameHandler : MonoBehaviour {
+	
+	[SerializeField] private Player1Movement player1;
+	[SerializeField] private Player2Movement player2;
+
+	private FoodLevelGrid FoodlevelGrid;
 
 	// Use this for initialization
 	void Start () {
 		Debug.Log ("GameHandler.Start");
 
-		GameObject Player1GameObject = new GameObject ();
-		GameObject Player2GameObject = new GameObject ();
+		FoodlevelGrid = new FoodLevelGrid (40, 20);
 
-		SpriteRenderer Player1SpriteRenderer = Player1GameObject.AddComponent<SpriteRenderer> ();
-		SpriteRenderer Player2SpriteRenderer = Player2GameObject.AddComponent<SpriteRenderer> ();
-
-		Player1SpriteRenderer.sprite = GameAssets.player1instance.Player1Sprite;
-		Player2SpriteRenderer.sprite = GameAssets.player2instance.Player2Sprite;
+		player1.Setup (FoodlevelGrid);
+		player2.Setup (FoodlevelGrid);
+		FoodlevelGrid.Setup (player1);
+		//FoodlevelGrid.Setup (player2);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
 	}
 }

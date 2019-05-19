@@ -5,6 +5,12 @@ using UnityEngine;
 public class Player2Movement : MonoBehaviour {
 
 	private Vector2Int gridPosition;
+	private FoodLevelGrid FoodlevelGrid;
+
+	//used to reference in GameHandler.cs
+	public void Setup(FoodLevelGrid FoodlevelGrid) {
+		this.FoodlevelGrid = FoodlevelGrid; 
+	}
 
 	private void Awake(){
 		gridPosition = new Vector2Int (4, -8);
@@ -32,5 +38,7 @@ public class Player2Movement : MonoBehaviour {
 
 	private void HandleGridMovement(){
 		transform.position = new Vector3 (gridPosition.x, gridPosition.y);
+
+		FoodlevelGrid.Player2Moved(gridPosition);
 	}
 }

@@ -70,7 +70,7 @@ namespace CodeMonkey.Utils {
         public bool triggerMouseOutFuncOnClick = false;
         public bool clickThroughUI = false;
 
-        private Action internalOnMouseDownFunc, internalOnMouseEnterFunc, internalOnMouseExitFunc;
+		private Action internalOnMouseDownFunc, internalOnMouseEnterFunc, internalOnMouseExitFunc;
 
 #if SOUND_MANAGER
         public Sound_Manager.Sound mouseOverSound, mouseClickSound;

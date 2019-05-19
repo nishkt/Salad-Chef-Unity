@@ -139,20 +139,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 643315a227409a04ba529179b77875e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player1Sprite: {fileID: 0}
-  Player2Sprite: {fileID: 0}
+  Player1Sprite: {fileID: 21300000, guid: 51dbd7e5ff3324a4587dd7b95da9c4be, type: 3}
+  Player2Sprite: {fileID: 21300000, guid: 54ebe22583e4d224393ac8d560fec9d7, type: 3}
+  CucumberSprite: {fileID: 21300000, guid: 5632f518191a703479bcdb9e637f797b, type: 3}
+  TomatoSprite: {fileID: 21300000, guid: fa2a7c9c1d236fa449a042f75d8c4bc0, type: 3}
+  AvocadoSprite: {fileID: 21300000, guid: 11107ad5d6aa20c4d9ff6a466503804b, type: 3}
+  CarrotSprite: {fileID: 21300000, guid: bd7a66bf432fa1f4abe128315c9bc181, type: 3}
+  LettuceSprite: {fileID: 21300000, guid: 4889927656e0667468d8f9f5c569a961, type: 3}
+  OnionSprite: {fileID: 21300000, guid: 579b7c8dfcd0916458d8848697498156, type: 3}
 --- !u!4 &230816687
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 230816685}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.47598302, y: -3.0230289, z: -0.58984375}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.52695197, y: -0.48537278, z: -0.07819563}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 1141444821}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &782321499
 GameObject:
@@ -178,7 +184,7 @@ Transform:
   m_GameObject: {fileID: 782321499}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 20, y: 20, z: 1}
+  m_LocalScale: {x: 40, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 1141444821}
   m_RootOrder: 1
@@ -218,7 +224,7 @@ SpriteRenderer:
   m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9d1f269f8b9cae64fada27e6b7ef81fa, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.875, g: 0.8621324, b: 0.8621324, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -340,6 +346,7 @@ Transform:
   m_Children:
   - {fileID: 1618912800}
   - {fileID: 782321500}
+  - {fileID: 230816687}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -354,6 +361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b58c56664fc0e147a61d299968834c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player1: {fileID: 956895095}
 --- !u!1 &1361230533
 GameObject:
   m_ObjectHideFlags: 0
