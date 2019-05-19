@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using CodeMonkey;
 
-public class FoodLevelGrid {
+public class FoodLevelGrid{
 
 	private Vector2Int cucumberGridPosition;
 	private Vector2Int tomatoGridPosition;
@@ -95,39 +95,47 @@ public class FoodLevelGrid {
 	public void Player1Moved(Vector2Int player1GridPosition){
 		if (player1GridPosition == cucumberGridPosition) {
 			Object.Destroy (cucumberGameObject);
+			cucumberGridPosition.x = -1000;
 
-			//SpawnCucumber();
+			GameHandler.AddScoreWhenPlayer1PickupVegetable ();
+
+			//StartCoroutine(reSpawnFood (cucumberGameObject));
 			CMDebug.TextPopupMouse ("Cucumber was grabbed by player 1!");
 		}
 		if (player1GridPosition == tomatoGridPosition) {
 			Object.Destroy (tomatoGameObject);
+			tomatoGridPosition.x = -1000;
+			GameHandler.AddScoreWhenPlayer1PickupVegetable ();
 
-			//SpawnCucumber();
 			CMDebug.TextPopupMouse ("Tomato was grabbed by player 1!");
 		}
 		if (player1GridPosition == lettuceGridPosition) {
 			Object.Destroy (lettuceGameObject);
+			lettuceGridPosition.x = -1000;
+			GameHandler.AddScoreWhenPlayer1PickupVegetable ();
 
-			//SpawnCucumber();
 			CMDebug.TextPopupMouse ("Lettuce was grabbed by player 1!");
 		}
 		if (player1GridPosition == avocadoGridPosition) {
 			Object.Destroy (avocadoGameObject);
+			avocadoGridPosition.x = -1000;
+			GameHandler.AddScoreWhenPlayer1PickupVegetable ();
 
-			//SpawnCucumber();
 			CMDebug.TextPopupMouse ("Avocado was grabbed by player 1!");
 		}
 		if (player1GridPosition == onionGridPosition) {
 			Object.Destroy (onionGameObject);
+			onionGridPosition.x = -1000;
+			GameHandler.AddScoreWhenPlayer1PickupVegetable ();
 
-			//SpawnCucumber();
 			CMDebug.TextPopupMouse ("Onion was grabbed by player 1!");
 		}
-		if (player1GridPosition == onionGridPosition) {
-			Object.Destroy (onionGameObject);
+		if (player1GridPosition == carrotGridPosition) {
+			Object.Destroy (carrotGameObject);
+			carrotGridPosition.x = -1000;
+			GameHandler.AddScoreWhenPlayer1PickupVegetable ();
 
-			//SpawnCucumber();
-			CMDebug.TextPopupMouse ("Onion was grabbed by player 1!");
+			CMDebug.TextPopupMouse ("Carrot was grabbed by player 1!");
 		}
 	}
 
@@ -135,39 +143,68 @@ public class FoodLevelGrid {
 	public void Player2Moved(Vector2Int player2GridPosition){
 		if (player2GridPosition == cucumberGridPosition) {
 			Object.Destroy (cucumberGameObject);
+			cucumberGridPosition.x = -1000;
+			GameHandler.AddScoreWhenPlayer2PickupVegetable ();
 
-			//SpawnCucumber();
 			CMDebug.TextPopupMouse ("Cucumber was grabbed by player 2!");
 		}
 		if (player2GridPosition == tomatoGridPosition) {
 			Object.Destroy (tomatoGameObject);
+			tomatoGridPosition.x = -1000;
+			GameHandler.AddScoreWhenPlayer2PickupVegetable ();
 
-			//SpawnCucumber();
 			CMDebug.TextPopupMouse ("Tomato was grabbed by player 2!");
 		}
 		if (player2GridPosition == lettuceGridPosition) {
 			Object.Destroy (lettuceGameObject);
+			lettuceGridPosition.x = -1000;
+			GameHandler.AddScoreWhenPlayer2PickupVegetable ();
 
-			//SpawnCucumber();
 			CMDebug.TextPopupMouse ("Lettuce was grabbed by player 2!");
 		}
 		if (player2GridPosition == avocadoGridPosition) {
 			Object.Destroy (avocadoGameObject);
+			avocadoGridPosition.x = -1000;
+			GameHandler.AddScoreWhenPlayer2PickupVegetable ();
 
-			//SpawnCucumber();
 			CMDebug.TextPopupMouse ("Avocado was grabbed by player 2!");
 		}
 		if (player2GridPosition == onionGridPosition) {
 			Object.Destroy (onionGameObject);
+			onionGridPosition.x = -1000;
+			GameHandler.AddScoreWhenPlayer2PickupVegetable ();
 
-			//SpawnCucumber();
 			CMDebug.TextPopupMouse ("Onion was grabbed by player 2!");
 		}
-		if (player2GridPosition == onionGridPosition) {
-			Object.Destroy (onionGameObject);
+		if (player2GridPosition == carrotGridPosition) {
+			Object.Destroy (carrotGameObject);
+			carrotGridPosition.x = -1000;
+			GameHandler.AddScoreWhenPlayer2PickupVegetable ();
 
-			//SpawnCucumber();
 			CMDebug.TextPopupMouse ("Onion was grabbed by player 2!");
+		}
+	}
+
+	public IEnumerator reSpawnFood(GameObject food){
+		if (food == cucumberGameObject) {
+			yield return new WaitForSeconds(4);
+			SpawnCucumber();
+		}
+		else if (food == tomatoGameObject){
+			yield return new WaitForSeconds(4);
+			SpawnTomato();
+		}else if (food == onionGameObject){
+			yield return new WaitForSeconds(4);
+			SpawnOnion();
+		}else if (food == avocadoGameObject){
+			yield return new WaitForSeconds(4);
+			SpawnAvocado();
+		}else if (food == lettuceGameObject){
+			yield return new WaitForSeconds(4);
+			SpawnLettuce();
+		}else if (food == carrotGameObject){
+			yield return new WaitForSeconds(4);
+			SpawnCarrot();
 		}
 	}
 }
