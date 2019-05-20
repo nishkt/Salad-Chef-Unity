@@ -12,7 +12,6 @@
 * Implemented players not being able to move off the game screen
 ## FEATURES BEING WORKED ON: (NOT COMPLETED) ##
 * Implement vegetables appearing again (after player picks them up again) on the left and right side of the room/game - Tried creating a IEnumerate function and use CoRoutines
-## FEATURES ADDED: ##
 * Implement players being able to carry 2 vegetables at a time
 * Implement cutting board
 * Implement customers section where orders occur
