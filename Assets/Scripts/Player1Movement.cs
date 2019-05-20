@@ -1,9 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player1Movement : MonoBehaviour {
 
+	private enum State
+	{
+		Alive,
+		Dead
+	}
+
+
+	private State state;
 	private Vector2Int gridPosition;
 	private FoodLevelGrid FoodlevelGrid;
 
@@ -14,11 +23,21 @@ public class Player1Movement : MonoBehaviour {
 	 
 	private void Awake(){
 		gridPosition = new Vector2Int (-4, -8);
+
+		state = State.Alive;
 	}
 
 	private void Update(){
-		HandleInput ();
-		HandleGridMovement ();
+		switch (state) {
+		case State.Alive:	
+			HandleInput ();
+			HandleGridMovement ();
+			break;
+		case State.Dead:
+			break;
+
+		}
+
 	}
 
 	private void HandleInput(){
@@ -34,6 +53,8 @@ public class Player1Movement : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.D)) {
 			gridPosition.x += 1;
 		}
+
+		gridPosition = FoodlevelGrid.validateGridPosition (gridPosition);
 	}
 
 	private void HandleGridMovement(){

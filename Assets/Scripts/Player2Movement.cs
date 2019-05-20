@@ -34,6 +34,8 @@ public class Player2Movement : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.RightArrow)) {
 			gridPosition.x += 1;
 		}
+
+		gridPosition = FoodlevelGrid.validateGridPosition (gridPosition);
 	}
 
 	private void HandleGridMovement(){

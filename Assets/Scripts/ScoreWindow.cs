@@ -19,5 +19,7 @@ public class ScoreWindow : MonoBehaviour {
 	private void Update(){
 		Player1Score.text = GameHandler.GetPlayer1Score().ToString();
 		Player2Score.text = GameHandler.GetPlayer2Score().ToString();
+		Player1Time.text = GameHandler.GetPlayer1Time ().ToString ();
+		Player2Time.text = GameHandler.GetPlayer2Time ().ToString ();
 	}
 }

@@ -207,4 +207,22 @@ public class FoodLevelGrid{
 			SpawnCarrot();
 		}
 	}
+
+	//used to check if the players have moved off the map
+	public Vector2Int validateGridPosition(Vector2Int gridPosition){
+		if (gridPosition.x < -19) {
+			gridPosition.x = -19;
+		}
+		if (gridPosition.y <-11){
+			gridPosition.y = -11;
+		}
+		if (gridPosition.x > 19) {
+			gridPosition.x = 19;
+		}
+		if (gridPosition.y > 2) {
+			gridPosition.y = 2;
+		}
+		return gridPosition;
+
+	}
 }
